@@ -23,53 +23,52 @@ export const RadiologyCenter = () => {
     }, [inView]);
 
     return (
-        
-        <div ref={sectionRef} className="sticky top-0 w-full min-h-screen z-30 overflow-y-auto" style={{ background: '#4a8dab' }}>
+        <div ref={sectionRef} className="sticky top-0 w-full min-h-screen z-30 overflow-y-auto" style={{ background: '#1a4d7a' }}>
 
-            {/* Grain texture */}
+            {/* SVG curve at top */}
+            <div className="absolute inset-x-0 top-0 pointer-events-none z-10" style={{ lineHeight: 0 }}>
+                <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: '70px' }}>
+                    <path d="M0,0 L0,70 C360,0 1080,0 1440,70 L1440,0 Z" fill="#b8dff0" />
+                </svg>
+            </div>
+
+            {/* Subtle grain */}
             <div className="absolute inset-0 pointer-events-none" style={{
-                opacity: 0.18,
+                opacity: 0.06,
                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
                 backgroundSize: '300px 300px',
             }} />
 
-            {/* Radial teal glow */}
+            {/* Teal radial glow */}
             <div className="absolute inset-0 pointer-events-none" style={{
-                background: 'radial-gradient(ellipse 60% 70% at 35% 55%, rgba(0,90,65,0.45) 0%, transparent 100%)',
+                background: 'radial-gradient(ellipse 60% 70% at 35% 55%, rgba(0,194,199,0.12) 0%, transparent 100%)',
             }} />
 
-            {/* Black arch from top */}
-            <div className="absolute inset-x-0 top-0 pointer-events-none" style={{ height: '120px', overflow: 'hidden' }}>
-                <div style={{
-                    position: 'absolute', top: 0, left: '-10%',
-                    width: '120%', height: '220px',
-                    background: '#000', borderRadius: '0 0 50% 50%',
-                }} />
-            </div>
+            {/* Top shadow fade */}
+            <div className="absolute inset-x-0 top-0 pointer-events-none" style={{
+                height: '100px',
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), transparent)',
+            }} />
 
-            {/* Vertical line — matches text block height */}
+            {/* Vertical line */}
             {lineHeight > 0 && (
-                <div className="hidden md:block absolute" style={{
-                    left: '200px',
-                    top: lineTop,
-                    height: lineHeight,
-                    width: '1px',
-                    background: 'rgba(255,255,255,0.18)',
+                <div className="hidden lg:block absolute" style={{
+                    left: '200px', top: lineTop, height: lineHeight,
+                    width: '1px', background: 'rgba(255,255,255,0.15)',
                 }} />
             )}
 
-            {/* Glowing dot — aligned with heading (top of text block) */}
+            {/* Glowing teal dot */}
             {lineHeight > 0 && (
-                <div className="hidden md:block absolute" style={{
-                    left: '194px',
-                    top: lineTop + lineHeight / 2 - 6,
-                    width: '12px', height: '12px', borderRadius: '50%', background: '#2ecc89',
-                    boxShadow: '0 0 8px 3px rgba(46,204,137,0.6), 0 0 24px 8px rgba(46,204,137,0.3), 0 0 48px 16px rgba(46,204,137,0.12)',
+                <div className="hidden lg:block absolute" style={{
+                    left: '194px', top: lineTop + lineHeight / 2 - 6,
+                    width: '12px', height: '12px', borderRadius: '50%', background: '#00c2c7',
+                    boxShadow: '0 0 8px 3px rgba(0,194,199,0.6), 0 0 24px 8px rgba(0,194,199,0.3), 0 0 48px 16px rgba(0,194,199,0.12)',
                 }} />
             )}
 
             {/* Content */}
-            <div ref={ref} className="flex flex-col md:flex-row items-center justify-between px-6 pt-36 pb-10 md:pt-0 md:pb-0 md:h-screen md:pl-65 gap-8 md:gap-0">
+            <div ref={ref} className="flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 pt-24 pb-10 md:pt-0 md:pb-0 md:h-screen md:px-8 lg:pl-20 xl:pl-40 2xl:pl-65 gap-8 md:gap-6">
 
                 {/* Text */}
                 <div ref={textRef} className={`w-full md:max-w-lg md:shrink-0 ${inView ? 'anim-slide-left' : 'anim-hidden'}`}>
@@ -102,7 +101,7 @@ export const RadiologyCenter = () => {
                     </div>
 
                     <button style={{
-                        background: '#00a896', color: '#fff', border: 'none',
+                        background: '#00c2c7', color: '#fff', border: 'none',
                         padding: '10px 22px', borderRadius: '999px',
                         fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer',
                     }}>
@@ -110,13 +109,16 @@ export const RadiologyCenter = () => {
                     </button>
                 </div>
 
-                {/* Body scan image — hidden on small screens */}
-                <img
-                    src={legacyImg}
-                    className={`w-full md:w-auto md:mr-28 lg:mr-44 rounded-2xl ${inView ? 'anim-slide-right anim-delay-2' : 'anim-hidden'}`}
-                    alt="Body scan"
-                    style={{ maxHeight: '40vh', objectFit: 'cover', flexShrink: 0 }}
-                />
+                {/* Image */}
+                <div className={`relative md:mr-4 lg:mr-58 shrink-0  ${inView ? 'anim-slide-right anim-delay-2' : 'anim-hidden'}`}
+                    style={{ padding: '10px', borderRadius: '20px', background: 'rgba(255,255,255,0.12)', border: '2px solid rgba(255,255,255,0.5)' }}>
+                    <img
+                        src={legacyImg}
+                        className="w-full md:w-auto rounded-xl"
+                        alt="Body scan"
+                        style={{ maxHeight: '38vh', objectFit: 'cover', display: 'block' }}
+                    />
+                </div>
             </div>
         </div>
     );

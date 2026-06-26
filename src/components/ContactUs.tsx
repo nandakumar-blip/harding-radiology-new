@@ -16,19 +16,19 @@ export const ContactUs = () => {
 
   return (
     <section className="bg-white pb-32 px-4 relative z-50">
-      <div ref={ref} className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start md:h-130">
+      <div ref={ref} className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start md:min-h-96">
 
         {/* Left: Google Maps embed */}
         <div
           className={`w-full md:h-full md:w-[55%] rounded-xl overflow-hidden shadow-sm shrink-0 ${inView ? 'anim-slide-left' : 'anim-hidden'}`}
-          style={{ minHeight: '400px' }}
+          style={{ minHeight: '520px' }}
         >
           <iframe
             title="Harding Radiology Location"
             src="https://maps.google.com/maps?q=1201+Mt+Kemble+Ave,+Morristown,+NJ+07960&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
-            style={{ border: 0, minHeight: '400px', display: 'block' }}
+            style={{ border: 0, minHeight: '520px', display: 'block' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

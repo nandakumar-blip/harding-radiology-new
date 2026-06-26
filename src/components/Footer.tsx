@@ -18,7 +18,20 @@ export const Footer = () => {
   const { ref, inView } = useInView();
 
   return (
-    <footer className="relative z-50 overflow-hidden" style={{ background: '#152d3e' }}>
+    <footer className="relative z-50 overflow-visible" style={{ background: '#152d3e' }}>
+      {/* Wave top transition — mirrors hero wave-bottom pattern */}
+      <div className="absolute top-0 left-0 w-full -translate-y-full pointer-events-none" style={{ lineHeight: 0 }}>
+        <svg viewBox="0 0 1440 40" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: '40px' }}>
+          <polygon points="
+            0,15   90,26  180,30  270,26  360,15
+            450,4  540,0  630,4   720,15
+            810,26 900,30 990,26  1080,15
+            1170,4 1260,0 1350,4  1440,15
+            1440,40 0,40
+          " fill="#152d3e" />
+        </svg>
+      </div>
+
       {/* Main content */}
       <div ref={ref} className="max-w-6xl mx-auto px-6 pt-16 pb-10 flex flex-col lg:flex-row gap-14">
 

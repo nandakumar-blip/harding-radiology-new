@@ -55,6 +55,67 @@
 .anim-marquee:hover,
 .anim-marquee-reverse:hover { animation-play-state: paused; }
 
+@keyframes mriGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(0,194,199,0.7)) drop-shadow(0 0 20px rgba(0,194,199,0.35)); }
+  50%       { filter: drop-shadow(0 0 16px rgba(0,194,199,1))  drop-shadow(0 0 36px rgba(0,194,199,0.6)); }
+}
+.anim-mri-glow { animation: mriGlow 2.5s ease-in-out infinite; }
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(0,194,199,0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(0,194,199,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,194,199,0); }
+}
+.anim-pulse-cta { animation: pulseRing 2s ease-out infinite; }
+
+.wave-bottom {
+  clip-path: polygon(
+    0 0, 100% 0,
+    100%   calc(100% - 15px),
+    93.75% calc(100% - 4px),
+    87.5%  100%,
+    81.25% calc(100% - 4px),
+    75%    calc(100% - 15px),
+    68.75% calc(100% - 26px),
+    62.5%  calc(100% - 30px),
+    56.25% calc(100% - 26px),
+    50%    calc(100% - 15px),
+    43.75% calc(100% - 4px),
+    37.5%  100%,
+    31.25% calc(100% - 4px),
+    25%    calc(100% - 15px),
+    18.75% calc(100% - 26px),
+    12.5%  calc(100% - 30px),
+    6.25%  calc(100% - 26px),
+    0      calc(100% - 15px)
+  );
+  padding-bottom: 32px;
+}
+
+.wave-top {
+  clip-path: polygon(
+    0      15px,
+    6.25%  26px,
+    12.5%  30px,
+    18.75% 26px,
+    25%    15px,
+    31.25% 4px,
+    37.5%  0%,
+    43.75% 4px,
+    50%    15px,
+    56.25% 26px,
+    62.5%  30px,
+    68.75% 26px,
+    75%    15px,
+    81.25% 4px,
+    87.5%  0%,
+    93.75% 4px,
+    100%   15px,
+    100% 100%, 0 100%
+  );
+  padding-top: 32px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-up, .anim-fade-in, .anim-slide-left, .anim-slide-right,
   .anim-scale-in, .anim-slide-up, .anim-marquee, .anim-marquee-reverse {

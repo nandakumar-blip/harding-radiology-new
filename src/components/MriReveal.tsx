@@ -33,7 +33,7 @@ export const MriReveal = () => {
     const { ref: excRef,   inView: excInView   } = useInView();
 
     return (
-        <section className="w-full z-50 bg-white py-16 relative px-6 md:px-20 overflow-visible">
+        <section className="w-full z-50 bg-white py-16 relative px-4 md:px-8 lg:px-16 overflow-visible">
             {/* Curved top */}
             <div className="absolute top-0 left-0 w-full -translate-y-full pointer-events-none">
                 <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full" style={{ display: 'block', height: '80px' }}>
