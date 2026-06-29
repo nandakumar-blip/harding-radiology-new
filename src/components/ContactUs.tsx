@@ -15,7 +15,7 @@ export const ContactUs = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-white pb-32 px-4 relative z-50">
+    <section className="bg-white pb-32 px-4 relative z-30">
       <div ref={ref} className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start md:min-h-96">
 
         {/* Left: Google Maps embed */}

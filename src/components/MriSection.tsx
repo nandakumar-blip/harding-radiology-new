@@ -22,7 +22,7 @@ export const MriSection = () => {
     );
 
     return (
-        <div className="w-full relative z-20 bg-transparent">
+        <div className="w-full relative z-30 bg-transparent">
             {/* Mobile layout */}
             <div className="md:hidden">
                 <div className="relative pt-16">

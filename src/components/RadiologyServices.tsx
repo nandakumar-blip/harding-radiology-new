@@ -98,7 +98,7 @@ export const RadiologyServices = () => {
   const active = hovered !== null ? services[hovered] : null;
 
   return (
-    <section ref={ref} className="bg-white relative py-16 z-50">
+    <section ref={ref} className="bg-white relative py-16 z-30">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className={`mb-4 text-center text-4xl font-bold text-slate-800 ${inView ? 'anim-fade-up' : 'anim-hidden'}`}>
           Radiology Services

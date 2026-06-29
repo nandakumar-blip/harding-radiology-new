@@ -32,7 +32,7 @@ export const Testimonials = () => {
   const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
 
   return (
-    <section className="bg-white py-16 md:py-24 px-4 relative z-50">
+    <section className="bg-white py-16 md:py-24 px-4 relative z-30">
       <div className="max-w-5xl mx-auto">
         <h2
           className={`text-center text-3xl md:text-4xl font-bold mb-3 ${inView ? 'anim-fade-up' : 'anim-hidden'}`}

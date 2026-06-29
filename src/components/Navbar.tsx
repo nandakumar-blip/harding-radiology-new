@@ -5,22 +5,20 @@ import logo from "../assets/logo.png";
 type NavItem = { label: string; to?: string };
 
 const servicesItems: NavItem[] = [
-    { label: "3D Mammography" },
-    { label: "3D Breast Ultrasound" },
-    { label: "CT Scans" },
-    { label: "Open MRI" },
-    { label: "Ultrasound" },
-    { label: "X-Ray", to: "/services/xray" },
-    { label: "DEXA Scan" },
+    { label: "X-RAY", to: "/services/xray"},
+    { label: "ULTRASOUND",to :"/services/ultrasound"},
+    { label: "OPEN MRI" },
+    { label: "3D MAMMOGRAM" },
+    { label: "DEXA SCAN" },
+    { label: "CT SCANS" },
+    { label: "3D BREAST ULTRASOUND" },
+
+
 ];
 
 const preventiveItems: NavItem[] = [
-    { label: "Whole-Body MRI" },
-    { label: "Low-Dose Lung CT" },
-    { label: "Cardiac Calcium Scoring" },
-    { label: "Bone Density (DEXA)" },
-    { label: "Breast Cancer Screening" },
-    { label: "Abdominal Screening" },
+    { label: "LUNG CANCER SCREENING" },
+    { label: "CARDIAC SCORING" },
 ];
 
 export const Navbar = () => {
@@ -33,9 +31,8 @@ export const Navbar = () => {
     const navRef = useRef<HTMLDivElement>(null);
     const isDark = isSubPage || isScrolled;
 
-    const linkCls = `mx-3 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${
-        isDark ? 'after:bg-white' : 'after:bg-[#1a4d7a]'
-    } after:transition-all after:duration-300 hover:after:w-full`;
+    const linkCls = `mx-3 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 ${isDark ? 'after:bg-white' : 'after:bg-[#1a4d7a]'
+        } after:transition-all after:duration-300 hover:after:w-full`;
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY >= 1);
@@ -75,16 +72,15 @@ export const Navbar = () => {
     return (
         <nav
             ref={navRef}
-            className={`flex items-center justify-between w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 py-2 fixed z-50 transition-colors duration-500 ${
-                isDark ? "bg-[#1a2b5e]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-            }`}
+            className={`flex items-center justify-between w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 py-2 fixed z-50 transition-colors duration-500 ${isDark ? "bg-[#1a2b5e]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+                }`}
         >
             <div>
-                <img
+               <a href="/"><img
                     src={logo}
                     alt="Prenuvo logo"
                     className={`transition-all duration-500 ${isDark ? 'brightness-0 invert drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]' : 'brightness-110'}`}
-                />
+                /></a>
             </div>
 
             {/* Desktop nav */}
@@ -177,3 +173,4 @@ export const Navbar = () => {
         </nav>
     );
 };
+export default Navbar

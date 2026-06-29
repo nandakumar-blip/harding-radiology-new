@@ -116,8 +116,9 @@ export const RadiologyCenter = () => {
                         src={legacyImg}
                         className="w-full md:w-auto rounded-xl"
                         alt="Body scan"
-                        style={{ maxHeight: '38vh', objectFit: 'cover', display: 'block' }}
+                        style={{ maxHeight: "30vh", objectFit: 'cover', display: 'block' }}
                     />
+                
                 </div>
             </div>
         </div>
