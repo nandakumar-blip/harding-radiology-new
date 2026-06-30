@@ -5,7 +5,7 @@ import { DotGrid, Rings, SoftCircle } from "./Decorations";
 const Hero = () => {
   return (
     <section
-      className="wave-bottom relative z-10 overflow-hidden bg-[#b8dff0] pt-20 sm:pt-24 lg:pt-28"
+      className=" sticky top-0 z-0 overflow-hidden bg-[#b8dff0] pt-20 sm:pt-24 lg:pt-28"
       style={{
         backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 45%, rgba(255,255,255,0.6) 100%), url(${heroImage})`,
         backgroundSize: "cover",

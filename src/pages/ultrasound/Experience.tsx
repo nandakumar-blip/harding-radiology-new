@@ -1,28 +1,23 @@
 import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
-import experienceImage from "../../assets/x-ray/1.png";
+import experienceImage from "../../assets/ultrasound/1.png";
 import { DotGrid, Rings } from "./Decorations";
 
 const items = [
   {
-    icon: Timer,
-    title: "Quick procedure",
-    body: "A brief, painless procedure that requires no injections, no preparation, and no recovery time.",
+    
+    body: "High-frequency sound waves create detailed, real-time images of organs, vessels, and soft tissues.",
   },
   {
-    icon: Syringe,
-    title: "No injections",
-    body: "Dense structures like bone appear white on the image; soft tissue and air-filled areas like the lungs appear darker.",
+    body: "Color-flow Doppler capability allows assessment of blood movement through arteries and veins",
   },
   {
-    icon: ClipboardList,
-    title: "Digital results",
-    body: "Results are processed digitally and shared with your physician promptly so your care can move forward.",
+    body: "No radiation, no injections, and no recovery time – a comfortable experience from start to finish.",
   },
 ];
 
 const Experience = () => {
   return (
-    <section className="relative z-20 overflow-hidden bg-[#1a4d7a] py-16 text-white md:py-20">
+    <section className="sticky top-0 wave-top z-20 -mt-8 h-screen overflow-hidden bg-[#1a4d7a] py-16 text-white md:py-20">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
@@ -43,46 +38,42 @@ const Experience = () => {
           <img
             src={experienceImage}
             alt="Modern X-ray experience"
-            className="h-[330px] w-full rounded-lg object-cover object-center md:h-[445px] "
+            className="h-full w-full object-cover object-center  "
           />
         </div>
 
         <div className="anim-slide-right anim-delay-2 md:ml-20 md:-mr-18">
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-            Safe, Painless & Over Before
-            <br />
-            You Know It - The Modern
-            <br />
-            X-Ray Experience
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl pt-16">
+           
+No Radiation. No Discomfort. Remarkably Detailed Scans with <span className="font-semibold text-[#00c2c7]">GE LOGIQ Series</span> 
           </h2>
 
           <p className="mt-6 max-w-xl text-base leading-[1.7] text-white/75">
-           An X-ray is one of the most straightforward imaging exams you can have. It takes just minutes, requires no special preparation in most cases, and uses a very small, controlled dose of radiation to create a detailed picture of your internal structures. At Harding, our digital system produces sharper images at lower doses than older equipment – so you get better results with less exposure.
+          GE LOGIQ Series 
+
+Ultrasound uses high-frequency sound waves, and not radiation, to create real-time images of your internal organs, tissues, and blood flow. It is one of the safest diagnostic tools available, suitable for a wide range of patients and clinical needs. Our GE Logic series unit offers full color Doppler capability, allowing detailed assessment of blood movement through arteries and veins alongside standard organ imaging
+
+GE Logic series ultrasound delivers detailed, real-time images across a wide range of diagnostic applications. Whether your physician has referred you for an abdominal concern, a vascular assessment, or a gynecological evaluation, we provide the clarity they need to guide your care.
           </p>
 
-          <div className="mt-6 space-y-5">
-            {items.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="flex gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#00c2c7]">
-                  <Icon size={22} />
-                </span>
-                <div>
-                  <h3 className="text-lg font-bold">{title}</h3>
-                  <p className="text-sm leading-6 text-white/75">{body}</p>
-                </div>
-              </div>
+          <ul className="mt-6 space-y-5 list-disc ml-5">
+            {items.map(({ body }) => (
+               
+                
+                
+                  <li className="text-sm leading-6 text-white/75">{body}</li>
+              
+            
             ))}
-          </div>
+          </ul>
 
           <div className="mt-7 flex items-center gap-5 rounded-xl border border-[#00c2c7] bg-white/5 px-6 py-5">
             <ShieldCheck className="shrink-0 text-[#00c2c7]" size={48} />
             <div>
               <h3 className="text-lg font-bold text-[#00c2c7]">
-                Advanced technology. Expert care.
+               Experience a fast, painless exam that gives your physician immediate, actionable insight into what your body is telling them.
               </h3>
-              <p className="mt-1 text-base text-white">
-               Everything is stored digitally at Harding, so your physician can access your images immediately and compare them with future scans if needed.
-              </p>
+              
             </div>
           </div>
         </div>

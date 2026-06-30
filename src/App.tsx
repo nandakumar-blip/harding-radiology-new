@@ -12,6 +12,13 @@ import {ContactUs} from "./components/ContactUs";
 import {Footer} from "./components/Footer";
 import XRay from "./pages/x-ray/XRay";
 import Ultrasound from "./pages/ultrasound/Ultrasound"
+import Openmri from "./pages/open-mri/Openmri"
+import ScrollToTop from "./components/ScrollToTop";
+import Mammogram from "./pages/3d-mammogram/Mammogram";
+import Dexa from "./pages/dexa-scan/Dexa";
+import Ctscan from "./pages/ct-scan/CtScan";
+import BreastUltrasound from "./pages/BreastUltrasound/BreastUltrasound";
+import LungCancer from "./pages/lung-cancer/LungCancer";
 const HomePage = () => (
   <>
     <Navbar />
@@ -29,12 +36,21 @@ const HomePage = () => (
 
 function App() {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/services/xray" element={<XRay />} />
      <Route path="/services/ultrasound" element={<Ultrasound />} />
+      <Route path="/services/open-mri" element={<Openmri />} />
+       <Route path="/services/3d-mammogram" element={<Mammogram />} />
+       <Route path="/services/dexa-scan" element={<Dexa />} />
+         <Route path="/services/ct-scans" element={<Ctscan />} />
+         <Route path="/services/3d-breast-ultrasound" element={<BreastUltrasound />} />
+         <Route path="/preventive/lung-cancer-screening" element={<LungCancer />} />
   
     </Routes>
+    </>
   )
 }
 

@@ -4,7 +4,7 @@ import { DotGrid, Rings } from "./Decorations";
 
 const Schedule = () => {
   return (
-    <section className="bg-white px-4 py-16">
+    <section className="relative z-10 bg-white px-4 py-16">
       <div className="relative mx-auto grid max-w-6xl overflow-hidden rounded-xl bg-[#b8dff0] shadow-xl md:grid-cols-[1fr_1.05fr]">
         <DotGrid className="absolute left-5 top-20 opacity-40" rows={4} cols={2} />
         <Rings className="absolute -bottom-10 -right-8 opacity-80" size={110} />

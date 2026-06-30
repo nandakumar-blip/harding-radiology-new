@@ -7,18 +7,18 @@ type NavItem = { label: string; to?: string };
 const servicesItems: NavItem[] = [
     { label: "X-RAY", to: "/services/xray"},
     { label: "ULTRASOUND",to :"/services/ultrasound"},
-    { label: "OPEN MRI" },
-    { label: "3D MAMMOGRAM" },
-    { label: "DEXA SCAN" },
-    { label: "CT SCANS" },
-    { label: "3D BREAST ULTRASOUND" },
+    { label: "OPEN MRI",to:"/services/open-mri" },
+    { label: "3D MAMMOGRAM",to:"/services/3d-mammogram" },
+    { label: "DEXA SCAN",to:"/services/dexa-scan" },
+    { label: "CT SCANS", to: "/services/ct-scans" },
+    { label: "3D BREAST ULTRASOUND", to: "/services/3d-breast-ultrasound" }
 
 
 ];
 
 const preventiveItems: NavItem[] = [
-    { label: "LUNG CANCER SCREENING" },
-    { label: "CARDIAC SCORING" },
+    { label: "LUNG CANCER SCREENING", to: "/preventive/lung-cancer-screening" },
+    { label: "CARDIAC SCORING", to: "/preventive/cardiac-scoring" },
 ];
 
 export const Navbar = () => {
@@ -35,7 +35,7 @@ export const Navbar = () => {
         } after:transition-all after:duration-300 hover:after:w-full`;
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY >= 1);
+        const handleScroll = () => setIsScrolled(window.scrollY >= 0);
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);

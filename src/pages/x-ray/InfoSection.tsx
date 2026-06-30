@@ -24,7 +24,7 @@ const columns = [
 
 const InfoSection = () => {
   return (
-    <section className="wave-top bg-[#b8dff0] py-16">
+    <section className=" relative z-10 wave-top bg-[#b8dff0] py-16">
       <div className="mx-auto max-w-6xl px-3 md:px-0">
         <div className="mx-auto max-w-3xl text-center pt-16">
           <h2 className="text-3xl font-bold leading-tight text-[#1a2b5e] sm:text-4xl">
@@ -39,11 +39,11 @@ const InfoSection = () => {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-0">
+        <div className="mt-10 grid gap-8 md:grid-rows-3 md:gap-8">
           {columns.map(({ icon: Icon, title, body, points }, index) => (
             <div
               key={title}
-              className={`px-0 md:px-8 ${index > 0 ? "md:border-l md:border-[#7ab8d4]" : ""}`}
+              className={`px-0 md:px-8 ${index > 0 ? " md:border-[#7ab8d4]" : ""}`}
             >
               <div className="flex items-start gap-5">
                 <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#00c2c7] text-white shadow-lg">

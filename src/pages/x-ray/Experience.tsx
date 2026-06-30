@@ -22,7 +22,7 @@ const items = [
 
 const Experience = () => {
   return (
-    <section className="relative z-20 overflow-hidden bg-[#1a4d7a] py-16 text-white md:py-20">
+    <section className=" sticky top-0 wave-top z-10 -mt-8 overflow-hidden bg-[#1a4d7a] py-16 text-white md:py-20">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
@@ -48,7 +48,7 @@ const Experience = () => {
         </div>
 
         <div className="anim-slide-right anim-delay-2 md:ml-20 md:-mr-18">
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl pt-16">
             Safe, Painless & Over Before
             <br />
             You Know It - The Modern

@@ -6,7 +6,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 const XRay = () => {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#1a4d7a]">
+    <main className="min-h-screen bg-[#1a4d7a]">
       <Navbar/>
       <Hero />
       <Experience />
