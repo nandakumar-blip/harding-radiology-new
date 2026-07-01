@@ -13,7 +13,7 @@ export const Wholebody = () => {
         // extends outside this container's bounds and must not be clipped.
         <div
             ref={ref}
-            className="w-full min-h-screen z-40 sticky px-4 top-0 flex flex-col md:flex-row items-center justify-center gap-10 py-16 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-visible"
+            className="w-full min-h-screen z-30 sticky px-4 top-0 flex flex-col md:flex-row items-center justify-center gap-10 py-16 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-visible"
             style={{ background: '#b8dff0' }}
         >
 

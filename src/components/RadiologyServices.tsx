@@ -84,7 +84,7 @@ export const RadiologyServices = () => {
   return (
     <section
       ref={ref}
-      className="relative z-50 mt-16 md:mt-22 py-20 md:py-28 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-hidden"
+      className="relative z-30 mt-16 md:mt-22 py-20 md:py-28 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #0d2137 0%, #1a3a5c 60%, #0f2d45 100%)' }}
     >
       {/* Decorative radial orb — offset top-left (-30%, -30%) so only the soft glow

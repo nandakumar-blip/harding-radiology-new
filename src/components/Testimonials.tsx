@@ -51,11 +51,11 @@ export const Testimonials = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-20 md:py-28 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 relative z-50" style={{ background: '#f8fafc' }}>
+    <section className="py-20 md:py-28 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 relative z-30" style={{ background: '#f8fafc' }}>
       <div ref={ref} className="w-full">
 
         {/* Section header animates as one unit on scroll entry. */}
-        <div className={`text-center mb-14 ${inView ? 'anim-fade-up' : 'anim-hidden'}`}>
+        <div className={`text-center mb-14 ${inView ? 'anim-fade-up' : ''}`}>
           <p className="uppercase tracking-widest text-sm font-semibold mb-3" style={{ color: '#2a7a8c' }}>
             Patient Reviews
           </p>
@@ -77,7 +77,7 @@ export const Testimonials = () => {
               className={`relative flex flex-col bg-white rounded-2xl p-7 transition-transform duration-300 hover:-translate-y-1 ${
                 // Index-based delay offsets start at 2 because the section header
                 // already consumes delay slots 0 and 1 in the animation system.
-                inView ? `anim-fade-up anim-delay-${i + 2}` : 'anim-hidden'
+                inView ? `anim-fade-up anim-delay-${i + 2}` : ''
               }`}
               style={{
                 boxShadow: '0 4px 24px rgba(0,0,0,0.07)',

@@ -41,7 +41,7 @@ export const Footer = () => {
       <div ref={ref} className="w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 pt-16 pb-10 flex flex-col lg:flex-row gap-14">
 
         {/* Left panel: brand statement + service area location grid */}
-        <div className={`flex-1 ${inView ? 'anim-slide-left' : 'anim-hidden'}`}>
+        <div className={`flex-1 ${inView ? 'anim-slide-left' : ''}`}>
           <h2 className="text-white font-bold text-2xl md:text-3xl leading-snug mb-6">
             Trusted, Top-Quality Imaging<br />
             For{' '}
@@ -67,7 +67,7 @@ export const Footer = () => {
         </div>
 
         {/* Right panel: nav links, contact details, social icons */}
-        <div className={`lg:w-72 shrink-0 ${inView ? 'anim-slide-right anim-delay-2' : 'anim-hidden'}`}>
+        <div className={`lg:w-72 shrink-0 ${inView ? 'anim-slide-right anim-delay-2' : ''}`}>
           <p className="font-bold text-base mb-5" style={{ color: 'rgba(255,255,255,0.9)' }}>
             About Harding
           </p>

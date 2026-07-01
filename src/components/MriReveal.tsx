@@ -50,7 +50,7 @@ export const MriReveal = () => {
     return (
         // top-20 offsets the section below the sticky nav bar so the curved top SVG
         // isn't hidden behind the navbar when this section scrolls into view.
-        <section className="w-full z-50 bg-white py-16 relative px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-visible top-20">
+        <section className="w-full z-30 bg-white py-16 relative px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-visible top-20">
 
             {/* Curved top connector — positioned above the section (-translate-y-full)
                 so it visually bridges the gap between the light-blue Wholebody section

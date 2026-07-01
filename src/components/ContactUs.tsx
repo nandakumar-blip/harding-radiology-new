@@ -64,7 +64,7 @@ export const ContactUs = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section className="relative z-50 py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-hidden bg-white">
+    <section className="relative z-30 py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 overflow-hidden bg-white">
 
       <div ref={ref} className="w-full">
 
