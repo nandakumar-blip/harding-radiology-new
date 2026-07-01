@@ -33,7 +33,7 @@ const Experience = () => {
         cols={4}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.9fr_1.1fr]">
+      <div className="relative w-full grid items-center gap-10 px-4 pt-26 md:px-8 lg:px-16 xl:px-32 2xl:px-60 md:grid-cols-[0.9fr_1.1fr]">
         <div className="overflow-hidden rounded-xl border-2 border-white/50 bg-white/10 p-2 shadow-xl anim-slide-left">
           <img
             src={experienceImage}

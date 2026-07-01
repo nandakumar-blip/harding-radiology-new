@@ -1,6 +1,13 @@
+// Shared decorative components for the DEXA Scan page.
+// All components are purely visual and carry aria-hidden="true" so screen readers skip them.
+// They are stateless and side-effect-free, making them safe to scatter across sections.
+
+// DotGrid: renders a CSS Grid of small filled circles.
+// gridTemplateColumns is set via inline style because Tailwind cannot generate
+// dynamic repeat() values at build time from runtime props.
 type DotGridProps = {
   className?: string;
-  color?: string;
+  color?: string; // dot fill color; defaults to the dark navy brand color
   rows?: number;
   cols?: number;
 };
@@ -13,9 +20,12 @@ export const DotGrid = ({
 }: DotGridProps) => (
   <div
     className={`grid gap-3 ${className}`}
+    // gridTemplateColumns must be inline — a dynamic repeat() won't survive Tailwind's purge.
     style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
     aria-hidden="true"
   >
+    {/* Array.from generates exactly rows*cols dots without a pre-allocated array;
+        index is safe as key because the list is static and never reordered. */}
     {Array.from({ length: rows * cols }).map((_, index) => (
       <span
         key={index}
@@ -26,10 +36,14 @@ export const DotGrid = ({
   </div>
 );
 
+// Rings: concentric SVG circles used as a background accent.
+// The radii [67, 53, 39, 25] are evenly spaced 14px apart within a fixed
+// "0 0 150 150" viewBox — the visual ring gaps stay consistent regardless
+// of the `size` prop because the SVG scales uniformly via width/height.
 type RingsProps = {
   className?: string;
-  color?: string;
-  size?: number;
+  color?: string; // stroke color; defaults to the light steel-blue brand accent
+  size?: number;  // rendered pixel dimensions of the SVG element
 };
 
 export const Rings = ({
@@ -58,6 +72,10 @@ export const Rings = ({
   </svg>
 );
 
+// SoftCircle: a plain div styled as a blurred circle accent.
+// Size and position are controlled entirely by the className prop (e.g. h-16 w-16).
+// bg-[#7ab8d4]/45 gives 45% opacity — visible against the white hero but not
+// distracting from the primary content.
 export const SoftCircle = ({ className = "" }: { className?: string }) => (
   <div className={`rounded-full bg-[#7ab8d4]/45 ${className}`} aria-hidden="true" />
 );

@@ -1,30 +1,52 @@
+/* Global stylesheet loaded once at application startup (imported in main.tsx).
+   Tailwind CSS is injected via the @import directive so its utility classes are
+   available everywhere without any additional setup.                            */
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   Entrance animation keyframes
+   Each animation is paired with a utility class below so components can apply
+   them with a single className. Duration is kept at 0.6–0.7s; shorter feels
+   abrupt, longer feels sluggish on content-reveal patterns.
+   ───────────────────────────────────────────── */
+
+/* Slides content up while fading in — used for stacked text/card reveals */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(36px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* Slides content in from the left — used for text blocks on the left half */
 @keyframes slideInLeft {
   from { opacity: 0; transform: translateX(-44px); }
   to   { opacity: 1; transform: translateX(0); }
 }
+/* Slides content in from the right — used for images on the right half */
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(44px); }
   to   { opacity: 1; transform: translateX(0); }
 }
+/* Simple opacity fade — used when positional movement isn't needed */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+/* Zoom-in-and-fade — used for cards that "appear" rather than fly in */
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.93); }
   to   { opacity: 1; transform: scale(1); }
 }
+/* Shorter upward slide (24px vs 36px) for subtler secondary elements */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─────────────────────────────────────────────
+   Animation utility classes
+   Applied by components to trigger the keyframe above.
+   anim-hidden keeps elements invisible before the IntersectionObserver fires;
+   swapping to one of the anim-* classes starts the entrance animation.
+   ───────────────────────────────────────────── */
 .anim-hidden      { opacity: 0; }
 .anim-fade-up     { animation: fadeUp      0.7s ease both; }
 .anim-fade-in     { animation: fadeIn      0.7s ease both; }
@@ -33,6 +55,12 @@
 .anim-scale-in    { animation: scaleIn     0.6s ease both; }
 .anim-slide-up    { animation: slideUp     0.6s ease both; }
 
+/* ─────────────────────────────────────────────
+   Staggered animation delays
+   Applied as a second class alongside any anim-* class to offset successive
+   items (e.g. a row of cards). Delays are spaced ~120ms apart so each element
+   feels individually animated without the sequence feeling slow as a whole.
+   ───────────────────────────────────────────── */
 .anim-delay-1 { animation-delay: 0.10s; }
 .anim-delay-2 { animation-delay: 0.20s; }
 .anim-delay-3 { animation-delay: 0.32s; }
@@ -42,6 +70,14 @@
 .anim-delay-7 { animation-delay: 0.80s; }
 .anim-delay-8 { animation-delay: 0.92s; }
 
+/* ─────────────────────────────────────────────
+   Marquee (infinite scroll) keyframes
+   Used in the MriReveal section to scroll the "what MRI can reveal" pill list.
+   Two copies of the list are rendered end-to-end so the loop is seamless; each
+   animation moves exactly -50% (one copy width) so the seam is invisible.
+   The reverse animation runs the second row in the opposite direction for visual interest.
+   Hover pauses playback so users can read a pill without it scrolling away.
+   ───────────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -55,12 +91,22 @@
 .anim-marquee:hover,
 .anim-marquee-reverse:hover { animation-play-state: paused; }
 
+/* ─────────────────────────────────────────────
+   MRI machine glow
+   Pulses the drop-shadow between a moderate and a strong teal glow, giving the
+   MRI machine image a subtle "active scanner" feeling without being distracting.
+   ───────────────────────────────────────────── */
 @keyframes mriGlow {
   0%, 100% { filter: drop-shadow(0 0 8px rgba(0,194,199,0.7)) drop-shadow(0 0 20px rgba(0,194,199,0.35)); }
   50%       { filter: drop-shadow(0 0 16px rgba(0,194,199,1))  drop-shadow(0 0 36px rgba(0,194,199,0.6)); }
 }
 .anim-mri-glow { animation: mriGlow 2.5s ease-in-out infinite; }
 
+/* ─────────────────────────────────────────────
+   CTA pulse ring
+   Draws an expanding ring outward from a button to attract attention without
+   requiring the user to interact first. Used on primary call-to-action buttons.
+   ───────────────────────────────────────────── */
 @keyframes pulseRing {
   0%   { box-shadow: 0 0 0 0 rgba(0,194,199,0.55); }
   70%  { box-shadow: 0 0 0 14px rgba(0,194,199,0); }
@@ -68,6 +114,14 @@
 }
 .anim-pulse-cta { animation: pulseRing 2s ease-out infinite; }
 
+/* ─────────────────────────────────────────────
+   Wave edge shapes
+   clip-path polygons that give section boundaries a hand-drawn wave silhouette.
+   wave-bottom clips the bottom of a section; wave-top clips the top.
+   The control points are evenly distributed at 6.25% increments (16 stops per
+   wavelength) so the wave has a consistent period across all viewport widths.
+   padding-bottom/top compensates for the clipped area so child content isn't cut off.
+   ───────────────────────────────────────────── */
 .wave-bottom {
   clip-path: polygon(
     0 0, 100% 0,
@@ -116,6 +170,14 @@
   padding-top: 32px;
 }
 
+/* ─────────────────────────────────────────────
+   Reduced-motion override
+   Respects the OS-level "reduce motion" accessibility preference.
+   All entrance animations are cancelled (no movement, no fade) and elements
+   are rendered at full opacity so the content is still immediately visible.
+   The marquee animations are also stopped since continuous motion is especially
+   problematic for users with vestibular disorders.
+   ───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-up, .anim-fade-in, .anim-slide-left, .anim-slide-right,
   .anim-scale-in, .anim-slide-up, .anim-marquee, .anim-marquee-reverse {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from '../hooks/useInView';
 
+// Service area locations rendered as a 4-column grid
 const locations = [
   ['Denville NJ', 'Chatham NJ', 'Warren NJ', 'Hanover NJ', 'Florham Park NJ'],
   ['Morristown NJ', 'Morris Plains NJ', 'Bedminster NJ', 'Chester NJ', 'Cedar Knolls NJ'],
@@ -8,6 +9,7 @@ const locations = [
   ['Morris County NJ', 'Parsippany NJ', 'Bridgewater NJ', 'Madison NJ'],
 ];
 
+// Footer nav links rendered as two columns (left label, right label per row)
 const navLinks = [
   ['About', 'Preventive Screening Tests'],
   ['Make Payment', 'Appointment'],
@@ -15,11 +17,14 @@ const navLinks = [
 ];
 
 export const Footer = () => {
+  // Triggers slide-in animations when the footer enters the viewport
   const { ref, inView } = useInView();
 
   return (
-    <footer className="relative z-50 overflow-visible" style={{ background: '#152d3e' }}>
-      {/* Wave top transition — mirrors hero wave-bottom pattern */}
+    <footer className="relative z-30 overflow-visible" style={{ background: '#152d3e' }}>
+
+      {/* Wave SVG positioned above the footer to visually connect with the preceding section.
+          Translated upward (-translate-y-full) so it overlaps the section above. */}
       <div className="absolute top-0 left-0 w-full -translate-y-full pointer-events-none" style={{ lineHeight: 0 }}>
         <svg viewBox="0 0 1440 40" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: '40px' }}>
           <polygon points="
@@ -32,10 +37,10 @@ export const Footer = () => {
         </svg>
       </div>
 
-      {/* Main content */}
-      <div ref={ref} className="max-w-6xl mx-auto px-6 pt-16 pb-10 flex flex-col lg:flex-row gap-14">
+      {/* Main content — ref here drives both left and right panel animations together */}
+      <div ref={ref} className="w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 pt-16 pb-10 flex flex-col lg:flex-row gap-14">
 
-        {/* Left */}
+        {/* Left panel: brand statement + service area location grid */}
         <div className={`flex-1 ${inView ? 'anim-slide-left' : 'anim-hidden'}`}>
           <h2 className="text-white font-bold text-2xl md:text-3xl leading-snug mb-6">
             Trusted, Top-Quality Imaging<br />
@@ -47,6 +52,7 @@ export const Footer = () => {
             Your trusted source for advanced imaging to patients in neighboring areas including
           </p>
 
+          {/* Locations grid: each array entry is one column */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1.5">
             {locations.map((col, ci) => (
               <ul key={ci} className="flex flex-col gap-1.5">
@@ -60,12 +66,13 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Right */}
+        {/* Right panel: nav links, contact details, social icons */}
         <div className={`lg:w-72 shrink-0 ${inView ? 'anim-slide-right anim-delay-2' : 'anim-hidden'}`}>
           <p className="font-bold text-base mb-5" style={{ color: 'rgba(255,255,255,0.9)' }}>
             About Harding
           </p>
 
+          {/* Two-column nav link grid — each navLinks row provides left + right anchor */}
           <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
             {navLinks.map(([left, right]) => (
               <React.Fragment key={left}>
@@ -75,6 +82,7 @@ export const Footer = () => {
             ))}
           </div>
 
+          {/* Contact details */}
           <p className="text-sm mb-2" style={{ color: 'rgba(255,255,255,0.75)' }}>
             Tel:{' '}
             <a href="tel:9082210603" className="hover:text-white transition-colors">908-221-0603</a>
@@ -86,7 +94,7 @@ export const Footer = () => {
             </a>
           </p>
 
-          {/* Social icons */}
+          {/* Social media icons — inline SVGs keep the bundle self-contained (no icon library needed) */}
           <div className="flex gap-5" style={{ color: 'rgba(255,255,255,0.75)' }}>
             {/* Facebook */}
             <a href="#" aria-label="Facebook" className="hover:text-white transition-colors">
@@ -120,7 +128,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Decorative teal corner shape */}
+      {/* Decorative teal triangle — clipPath polygon creates a right-angle corner accent */}
       <div className="absolute bottom-0 right-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
         <div
           className="absolute bottom-0 right-0 w-full h-full"
@@ -128,7 +136,7 @@ export const Footer = () => {
         />
       </div>
 
-      {/* Bottom bar */}
+      {/* Bottom copyright bar */}
       <div className="border-t border-white/10 py-5 text-center">
         <p className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
           © 2026 Radiology Center At Harding . All Rights Reserved

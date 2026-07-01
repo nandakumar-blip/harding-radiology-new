@@ -1,3 +1,6 @@
+// Hero section for the 3D Mammogram page.
+// Uses a sticky/z-10 position so the Experience section (z-20) slides over it
+// during scroll, creating a layered reveal effect without JavaScript.
 import { ArrowRight } from "lucide-react";
 import heroImage from "../../assets/3d-mammogram/3d-mammogram.jpg";
 import { DotGrid, Rings, SoftCircle } from "./Decorations";
@@ -5,23 +8,33 @@ import { DotGrid, Rings, SoftCircle } from "./Decorations";
 const Hero = () => {
   return (
     <section
+      // sticky + z-10: this section stays fixed while the user scrolls until
+      // the next section (z-20) slides on top of it, producing a card-stack effect.
+      // overflow-hidden prevents the absolutely-positioned decorations from extending
+      // the page width.
       className=" sticky top-0 z-10 overflow-hidden bg-[#b8dff0] pt-20 sm:pt-24 lg:pt-28"
       style={{
+        // The left-to-right gradient fades from near-opaque white to semi-transparent,
+        // so the hero image is fully visible on the right while text on the left stays
+        // readable without a separate text background box.
         backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 45%, rgba(255,255,255,0.6) 100%), url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
+      {/* Purely decorative background elements — aria-hidden in each component */}
       <DotGrid className="absolute left-4 top-8 opacity-60" rows={5} cols={4} />
       <Rings className="absolute -right-8 top-4 opacity-45" />
+      {/* SoftCircle bleeds off the right edge (-right-7) to imply depth without full visibility */}
       <SoftCircle className="absolute -right-7 top-72 h-16 w-16" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start justify-center gap-6 px-4 pb-16 pt-14 sm:px-6 sm:pb-20 md:gap-8 lg:px-8">
+      {/* relative z-10 lifts this content above the background decorations */}
+      <div className="relative z-10 w-full flex flex-col items-start justify-center gap-6 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 pb-16 pt-14 sm:pb-20 md:gap-8">
         <div className="max-w-xl w-full sm:max-w-2xl">
-         
+
 
           <h1 className="mt-6 text-3xl font-bold leading-tight text-[#1a2b5e] sm:mt-7 sm:text-4xl lg:text-5xl">
-          
+
 
 
 Ensure Early Detection with 3D Mammography
@@ -31,8 +44,11 @@ Ensure Early Detection with 3D Mammography
          The Genius™ 3D Mammography exam is FDA-approved for all breast densities and clinically proven to detect cancer earlier, with fewer unnecessary callbacks.
           </p>
 
+          {/* CTA button: full-width on mobile, auto-width on sm+ to avoid
+              stretching across large screens */}
           <button className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#00c2c7] px-6 py-3.5 text-sm font-bold text-white transition hover:opacity-90 sm:w-auto sm:px-8 sm:py-4">
             Book Appointment
+            {/* Inverted circle icon: white circle with teal arrow, matching the teal button */}
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#00c2c7]">
               <ArrowRight size={14} />
             </span>

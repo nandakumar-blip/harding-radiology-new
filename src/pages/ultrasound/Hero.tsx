@@ -5,18 +5,19 @@ import { DotGrid, Rings, SoftCircle } from "./Decorations";
 const Hero = () => {
   return (
     <section
-      className=" sticky top-0 z-10 overflow-hidden bg-[#b8dff0] pt-20 sm:pt-24 lg:pt-28"
+      className=" sticky top-0 z-10 overflow-hidden bg-[#b8dff0] pt-20 sm:pt-24 lg:pt-38 lg:pb-10 "
       style={{
         backgroundImage: `linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 45%, rgba(255,255,255,0.6) 100%), url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+       
       }}
     >
       <DotGrid className="absolute left-4 top-8 opacity-60" rows={5} cols={4} />
       <Rings className="absolute -right-8 top-4 opacity-45" />
       <SoftCircle className="absolute -right-7 top-72 h-16 w-16" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start justify-center gap-6 px-4 pb-16 pt-14 sm:px-6 sm:pb-20 md:gap-8 lg:px-8">
+      <div className="relative z-10 w-full flex flex-col items-start justify-center gap-6 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 pb-16 pt-14 sm:pb-20 md:gap-8">
         <div className="max-w-xl w-full sm:max-w-2xl">
          
 

@@ -27,7 +27,7 @@ const columns = [
 const InfoSection = () => {
   return (
     <section className="relative z-20 wave-top bg-[#b8dff0] py-16 w-full">
-      <div className="mx-auto max-w-6xl px-3 md:px-0 w-full">
+      <div className="w-full px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60">
         <div className="mx-auto max-w-3xl text-center pt-16">
           <h2 className="text-3xl font-bold leading-tight text-[#1a2b5e] sm:text-4xl">
            A Closer Look at Open MRI

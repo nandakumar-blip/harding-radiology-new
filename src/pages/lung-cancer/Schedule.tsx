@@ -1,25 +1,41 @@
+// Schedule section for the Lung Cancer Screening page.
+// Final content section before the footer. Contains a two-column CTA card
+// urging high-risk patients to get screened. Uses an open-mri asset image
+// (no dedicated lung-cancer schedule image exists yet).
 import { Phone } from "lucide-react";
 import scheduleImage from "../../assets/open-mri/4.png";
 import { DotGrid, Rings } from "./Decorations";
 
 const Schedule = () => {
   return (
-    <section className="relative z-20 bg-white px-4 py-16">
-      <div className="relative mx-auto grid max-w-6xl overflow-hidden rounded-xl bg-[#b8dff0] shadow-xl md:grid-cols-[1fr_1.05fr]">
+    // relative z-20 ensures this sits above the sticky Hero section (z-10)
+    // as the page reaches its bottom; bg-white provides a clean break
+    // from the light-blue InfoSection above.
+    <section className="relative z-20 bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 py-16">
+      {/* CTA card: two-column grid — text 1fr, image 1.05fr.
+          overflow-hidden clips decoration elements and the rounded corners cleanly. */}
+      <div className="relative w-full grid overflow-hidden rounded-xl bg-[#b8dff0] shadow-xl md:grid-cols-[1fr_1.05fr]">
+        {/* Decorations are absolutely positioned within the card boundary */}
         <DotGrid className="absolute left-5 top-20 opacity-40" rows={4} cols={2} />
+        {/* Rings bleed off the bottom-right corner to visually anchor the image column */}
         <Rings className="absolute -bottom-10 -right-8 opacity-80" size={110} />
 
+        {/* relative z-10 keeps the text column above the absolute DotGrid overlay */}
         <div className="relative z-10 px-8 py-9 md:px-16">
           <h2 className="text-2xl font-bold text-[#1a2b5e] sm:text-2xl">
           Schedule Your Lung Cancer Screening
           </h2>
-          <p className="mt-6 text-md text-[#2a4a6e]">If you’ve been putting it off, this is the scan that changes that. If advised by our physician, call our team or book online. Same-day appointments available based on scheduling.</p>
+          <p className="mt-6 text-md text-[#2a4a6e]">If you've been putting it off, this is the scan that changes that. If advised by our physician, call our team or book online. Same-day appointments available based on scheduling.</p>
           <button className="mt-5 inline-flex items-center gap-4 rounded-full bg-[#00c2c7] px-8 py-4 text-sm font-bold text-white transition hover:opacity-90">
             <Phone size={20} />
             Call Now
           </button>
         </div>
 
+        {/* Image column: absolutely fills its grid cell so the image scales to any
+            card height without distorting card dimensions.
+            The left-side gradient (from-[#b8dff0] to-transparent) blends the image
+            into the text column rather than showing a hard edge. */}
         <div className="relative min-h-[220px]">
           <img
             src={scheduleImage}

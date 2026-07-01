@@ -16,7 +16,7 @@ const Hero = () => {
       <Rings className="absolute -right-8 top-4 opacity-45" />
       <SoftCircle className="absolute -right-7 top-72 h-16 w-16" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start justify-center gap-6 px-4 pb-16 pt-14 sm:px-6 sm:pb-20 md:gap-8 lg:px-8">
+      <div className="relative z-10 w-full flex flex-col items-start justify-center gap-6 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-60 pb-16 pt-14 sm:pb-20 md:gap-8">
         <div className="max-w-xl w-full sm:max-w-2xl">
          
 
