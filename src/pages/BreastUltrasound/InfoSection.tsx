@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list covering dense breast tissue, why supplemental
 // screening matters, and the cancer risk link. Continues the wave-top / light-blue
 // visual rhythm shared across all service page InfoSections.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/breast-ultrasound/2.png"
 import icon2 from "../../assets/breast-ultrasound/3.png"
 import icon3 from "../../assets/breast-ultrasound/4.png"

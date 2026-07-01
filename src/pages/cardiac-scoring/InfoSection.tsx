@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list covering common uses, how the exam works,
 // and who should consider it. Uses z-10 (not z-20) to match this page's lower
 // z-index stack (Hero z-0, Experience z-10, InfoSection z-10).
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/cardiac-scoring/2.png"
 import icon2 from "../../assets/cardiac-scoring/3.png"
 import icon3 from "../../assets/cardiac-scoring/4.png"

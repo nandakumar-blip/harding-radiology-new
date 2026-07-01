@@ -2,8 +2,7 @@
 // Sits at z-20 with sticky top-0 and -mt-8, so it scrolls up over Hero (z-10)
 // and is itself later covered by InfoSection (z-20 wave-top) — the stacking
 // layers create a layered-cards scroll narrative across the full page.
-import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
-import experienceImage from "../../assets/ultrasound/1.png";
+import { ShieldCheck } from "lucide-react";
 import { DotGrid, Rings } from "./Decorations";
 
 // Each item in `items` provides one bullet point for the "what makes our MRI

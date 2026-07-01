@@ -1,4 +1,4 @@
-import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import experienceImage from "../../assets/open-mri/scan-img.png";
 import { DotGrid, Rings } from "./Decorations";
 

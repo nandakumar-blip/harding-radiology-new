@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list covering LDCT eligibility, contraindications,
 // and insurance/scheduling. Continues the wave-top / light-blue visual rhythm
 // shared across all service page InfoSections.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/lung-cancer/2.png"
 import icon2 from "../../assets/lung-cancer/3.png"
 import icon3 from "../../assets/lung-cancer/4.png"

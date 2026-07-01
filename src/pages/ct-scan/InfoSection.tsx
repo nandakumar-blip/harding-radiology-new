@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list covering what a CT scan is, what it can detect,
 // and its role in preventive screening. Continues the wave-top / light-blue visual
 // rhythm shared across all service page InfoSections.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/ct-scan/2.png"
 import icon2 from "../../assets/ct-scan/3.png"
 import icon3 from "../../assets/ct-scan/4.png"

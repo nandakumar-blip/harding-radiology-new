@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list explaining the Genius 3D exam process,
 // eligibility, and what to expect. Sits above the Schedule section (both z-20)
 // with a wave-top curved edge to continue the layered-card visual flow.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/3d-mammogram/2.png"
 import icon2 from "../../assets/3d-mammogram/3.png"
 import icon3 from "../../assets/3d-mammogram/4.png"

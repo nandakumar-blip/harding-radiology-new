@@ -31,6 +31,23 @@ const preventiveItems: NavItem[] = [
     { label: "CARDIAC SCORING", to: "/preventive/cardiac-scoring" },
 ];
 
+// Shared class string for dropdown list items — at module scope so DropdownMenu
+// can reference it without prop drilling.
+const itemCls = "block px-5 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white transition-colors duration-150";
+
+// DropdownMenu must live at module scope (not inside Navbar's render) so React
+// does not recreate it on every render, which would reset the component's state.
+const DropdownMenu = ({ items }: { items: NavItem[] }) => (
+    <div className="absolute top-full left-0 mt-2 w-56 rounded-lg shadow-xl overflow-hidden z-50"
+        style={{ background: '#1a4d7a' }}>
+        {items.map(({ label, to }) => (
+            to
+                ? <Link key={label} to={to} className={itemCls}>{label}</Link>
+                : <a key={label} href="#" className={itemCls}>{label}</a>
+        ))}
+    </div>
+);
+
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -79,25 +96,6 @@ export const Navbar = () => {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
-
-    // Shared class string for individual dropdown list items — defined once here
-    // so both the services and preventive menus render identically.
-    const itemCls = "block px-5 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white transition-colors duration-150";
-
-    // Inline component so it can close over `itemCls` without prop drilling.
-    // z-50 keeps the panel above the hero section (z-10) and the MRI section (z-30).
-    const DropdownMenu = ({ items }: { items: NavItem[] }) => (
-        <div className="absolute top-full left-0 mt-2 w-56 rounded-lg shadow-xl overflow-hidden z-50"
-            style={{ background: '#1a4d7a' }}>
-            {items.map(({ label, to }) => (
-                // Use React Router's Link for internal routes to avoid full-page reloads;
-                // fall back to a plain anchor for items without a `to` (e.g. future external links).
-                to
-                    ? <Link key={label} to={to} className={itemCls}>{label}</Link>
-                    : <a key={label} href="#" className={itemCls}>{label}</a>
-            ))}
-        </div>
-    );
 
     // Inline SVG chevron rotates 180° when its dropdown is open, giving a clear
     // open/close affordance without importing an icon library.

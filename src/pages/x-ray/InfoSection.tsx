@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/x-ray/2.png"
 import icon2 from "../../assets/x-ray/3.png"
 import icon3 from "../../assets/x-ray/4.png"
@@ -40,7 +40,7 @@ const InfoSection = () => {
         </div>
 
         <div className="mt-10 grid gap-8 md:grid-rows-3 md:gap-8">
-          {columns.map(({ icon: Icon, title, body, points }, index) => (
+          {columns.map(({ icon: Icon, title, body }, index) => (
             <div
               key={title}
               className={`px-0 md:px-8 ${index > 0 ? " md:border-[#7ab8d4]" : ""}`}

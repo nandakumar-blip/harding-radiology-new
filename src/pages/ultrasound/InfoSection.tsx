@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/ultrasound/2.png"
 import icon2 from "../../assets/ultrasound/3.png"
 import icon3 from "../../assets/ultrasound/4.png"

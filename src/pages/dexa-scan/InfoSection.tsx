@@ -2,7 +2,7 @@
 // Renders a three-item FAQ-style list covering what a DEXA scan is, who should
 // have one, and why bone density testing matters. Continues the wave-top /
 // light-blue visual rhythm established by the InfoSection pattern across all service pages.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/dexa-scan/2.png"
 import icon2 from "../../assets/dexa-scan/3.png"
 import icon3 from "../../assets/dexa-scan/4.png"

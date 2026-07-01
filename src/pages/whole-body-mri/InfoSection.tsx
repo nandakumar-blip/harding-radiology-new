@@ -2,11 +2,10 @@
 // Transitions from the dark Experience section back to the light sky-blue palette,
 // using wave-top to create a curved boundary between the two backgrounds.
 // Presents three feature columns explaining the clinical value of the WB-MRI service.
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/ultrasound/2.png"
 import icon2 from "../../assets/ultrasound/3.png"
 import icon3 from "../../assets/ultrasound/4.png"
-import icon4 from "../../assets/ultrasound/5.png"
 
 // Each entry in `columns` describes one pillar of the Harding WB-MRI value proposition.
 // Shape:

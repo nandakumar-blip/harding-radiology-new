@@ -2,7 +2,7 @@
 // Note: uses z-10 (not z-20 like other service pages) because the Hero here
 // is z-0 — the relative stacking order is preserved, just one level lower.
 // Also uses -mt-8 with wave-top to slide over the Hero during scroll.
-import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import experienceImage from "../../assets/cardiac-scoring/1.png";
 import { DotGrid, Rings } from "./Decorations";
 

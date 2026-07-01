@@ -1,7 +1,7 @@
 // Experience section for the DEXA Scan page.
 // Sits at z-20 with -mt-8 so it visually overlaps and slides over the Hero (z-10)
 // during scroll, creating the layered page-stack reveal pattern used across all service pages.
-import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import experienceImage from "../../assets/dexa-scan/1.png";
 import { DotGrid, Rings } from "./Decorations";
 

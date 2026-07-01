@@ -3,7 +3,7 @@
 // Note: uses h-screen (instead of h-auto used on other service pages) to ensure
 // this section fills the viewport before the InfoSection scrolls into view —
 // preventing an awkward gap on tall displays.
-import { ClipboardList, ShieldCheck, Syringe, Timer } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import experienceImage from "../../assets/lung-cancer/1.png";
 import { DotGrid, Rings } from "./Decorations";
 

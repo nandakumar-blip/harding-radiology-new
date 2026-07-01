@@ -4,7 +4,7 @@
 // 2. "Trusted Referral Partner" — a highlight box with three key metrics for
 //    physicians who refer patients.
 import { ArrowRight } from "lucide-react";
-import mriImage from "../../assets/MRImachine.webp";
+
 
 // Each entry in `doctors` represents one board-certified radiologist.
 // Shape:

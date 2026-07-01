@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import icon1 from "../../assets/open-mri/1.png"
 import icon2 from "../../assets/open-mri/2.png"
 import icon3 from "../../assets/open-mri/3.png"
